@@ -1,13 +1,15 @@
 import React from 'react';
+import { RecoilRoot } from 'recoil';
 import CounterButton from './CounterButton';
-import { CounterProvider } from './CounterContext';
+import { DisplayCount } from './DisplayCount';
 
 const App = () => {
   return (
-    <CounterProvider>
+    <RecoilRoot>
       <h1>State Management</h1>
       <CounterButton />
-    </CounterProvider>
+      <DisplayCount />
+    </RecoilRoot>
   );
 };
 
