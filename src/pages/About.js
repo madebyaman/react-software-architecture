@@ -1,12 +1,9 @@
 import React, { lazy, Suspense } from 'react';
-// import { One } from './One';
-// import { Three } from './Three';
-// import { Two } from './Two';
 const One = lazy(() => import('./One'));
 const Two = lazy(() => import('./Two'));
 const Three = lazy(() => import('./Three'));
 
-export const About = () => {
+const About = () => {
   return (
     <>
       <h1>About</h1>
@@ -18,3 +15,5 @@ export const About = () => {
     </>
   );
 };
+
+export default About;
