@@ -1,15 +1,14 @@
 import React from 'react';
-import { RecoilRoot } from 'recoil';
+import { Provider } from 'react-redux';
 import CounterButton from './CounterButton';
-import { DisplayCount } from './DisplayCount';
+import { store } from './store';
 
 const App = () => {
   return (
-    <RecoilRoot>
+    <Provider store={store}>
       <h1>State Management</h1>
       <CounterButton />
-      <DisplayCount />
-    </RecoilRoot>
+    </Provider>
   );
 };
 
