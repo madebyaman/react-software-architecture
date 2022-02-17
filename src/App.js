@@ -2,11 +2,11 @@ import React from 'react';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Articles } from './pages/Articles';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <h1>Server side rendering</h1>
       <ul>
         <li>
@@ -30,7 +30,7 @@ const App = () => {
           <Articles />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </>
   );
 };
 
