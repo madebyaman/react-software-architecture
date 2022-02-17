@@ -1,7 +1,24 @@
 import React from 'react';
+import { useDataSSR } from '../useDataSSR';
 
 export const Articles = () => {
-	return (
-		<h1>Articles</h1>
-	);
-}
+  const articles = useDataSSR('articles', () => {
+    console.log('No preloaded articles found');
+    return fetch('http://localhost:8080/api/articles').then((res) =>
+      res.json()
+    );
+  });
+
+  return (
+    <>
+      <h1>Articles</h1>
+      {articles &&
+        articles.map((article) => (
+          <div key={article.title}>
+            <h3>{article.title}</h3>
+            <p>by {article.author}</p>
+          </div>
+        ))}
+    </>
+  );
+};
