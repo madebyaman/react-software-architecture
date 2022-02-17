@@ -1,12 +1,13 @@
 import React from 'react';
 import CounterButton from './CounterButton';
+import { CounterProvider } from './CounterContext';
 
 const App = () => {
   return (
-    <div>
+    <CounterProvider>
       <h1>State Management</h1>
       <CounterButton />
-    </div>
+    </CounterProvider>
   );
 };
 
